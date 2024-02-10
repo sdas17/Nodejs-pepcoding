@@ -1,11 +1,18 @@
 const http = require('http');
+const fs = require('fs');
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello, http server coding');
-    console.log(req.method);
-    console.log(req.url);
+    fs.readFile('./views/demo.html', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading the file:', err);
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('Internal Server Error');
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        }
+    });
 });
 
 server.listen(port, () => {
