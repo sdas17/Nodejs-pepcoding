@@ -31,3 +31,8 @@ Notifications and communcations
 
 Http hyper tex transer prototcol
 
+
+====================
+server how to created and and file structe how to created and how to acess how to do that
+
+

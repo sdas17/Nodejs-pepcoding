@@ -8,9 +8,20 @@ const server = http.createServer((req, res) => {
     switch (req.url) {
         case '/':
             path += '/demo.html';
+            res.statusCode = 200;
+
             break;
+            case '/about-me':
+                path += '/demo2.html';
+                res.statusCode = 200;
+                res.setHeader("Location",'/')
+    
+                break;
         case '/errors':
             path += '/error.html';
+            res.statusCode = 400;
+
+
             break;
         default:
             path += '/demo.html';
