@@ -13,14 +13,15 @@ app.get('/', (req, res) => {
         }
     });
 });
-
+// http://localhost:3000/errors
+http://localhost:3000/about-me'
 app.get('/about-me', (req, res) => {
     fs.readFile('./views/demo/demo2.html', 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading the file:', err);
             res.status(500).send('Internal Server Error');
         } else {
-            res.redirect('/');
+            res.send(data);
         }
     });
 });
@@ -35,6 +36,9 @@ app.get('/errors', (req, res) => {
         }
     });
 });
+app.get("/about-us",(req,res)=>{
+    res.redirect("/about-me")
+})
 
 // Handle other routes
 app.use((req, res) => {
