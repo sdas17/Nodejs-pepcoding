@@ -29,4 +29,6 @@ app.get("/user", (req, res) => {
     const userName = req.query.name;
     // ... use userId and userName for processing
 });
+
+==========
 Example URL: localhost:3000/user/?id=123&name=johndoe
